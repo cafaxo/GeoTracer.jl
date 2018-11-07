@@ -5,6 +5,7 @@ using StaticArrays
 
 export
     Construction,
+    Point,
     new_free_point!,
     new_distance!,
     new_join!,
