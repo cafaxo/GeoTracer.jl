@@ -120,10 +120,10 @@ function intersect_line_circle(l::Point, c::CircleMatrix)
 
     erg = s + alp * l1
 
-    erg1 = erg[argmax((norm(erg[1,:]), norm(erg[2,:]), norm(erg[3,:]))),:]
-    erg2 = erg[:,argmax((norm(erg[:,1]), norm(erg[:,2]), norm(erg[:,3])))]
+    erg1 = Point(erg[argmax((norm(erg[1,:]), norm(erg[2,:]), norm(erg[3,:]))),:])
+    erg2 = Point(erg[:,argmax((norm(erg[:,1]), norm(erg[:,2]), norm(erg[:,3])))])
 
-    return Point(erg1), Point(erg2)
+    return erg1 / abs(erg1), erg2 / abs(erg2)
 end
 
 function intersect_circle_circle(c1::CircleMatrix, c2::CircleMatrix)
